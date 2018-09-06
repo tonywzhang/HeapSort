@@ -2,6 +2,7 @@ class BinaryMinHeap
   attr_reader :store, :prc
 
   def initialize(&prc)
+    @store = Array.new{LinkedList.new}
   end
 
   def count
@@ -11,6 +12,7 @@ class BinaryMinHeap
   end
 
   def peek
+    
   end
 
   def push(val)
