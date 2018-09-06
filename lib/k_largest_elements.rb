@@ -5,5 +5,16 @@ def k_largest_elements(array, k)
   # array[0..k-1].reverse!
 
   # nlog(n) run time. try to improve
-  array.heap_sort!.reverse![0..k-1].reverse!
+  # array.heap_sort!.reverse![0..k-1].reverse!
+
+  result = BinaryMinHeap.new
+  k.times do
+    result.push(array.pop)
+  end
+
+  until array.empty?
+    result.push(array.pop)
+    result.extract
+  end
+  result.store
 end
